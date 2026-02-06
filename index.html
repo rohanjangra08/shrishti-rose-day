@@ -1,26 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
   <title>Shrishti 🌹</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400&display=swap" rel="stylesheet">
 
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
+      margin: 0;
       font-family: 'Poppins', sans-serif;
-      background-color: #fff6f8;
+      background: #fff6f8;
       color: #3a1f2b;
       text-align: center;
-      overflow-x: hidden;
     }
 
     section {
@@ -32,28 +26,23 @@
       align-items: center;
     }
 
-    h1 {
+    h1, h2 {
       font-family: 'Playfair Display', serif;
+    }
+
+    h1 {
       font-size: 3.2rem;
-      margin-bottom: 10px;
     }
 
     h2 {
-      font-family: 'Playfair Display', serif;
       font-size: 2rem;
       margin-bottom: 20px;
     }
 
     p {
-      font-size: 1.1rem;
       max-width: 700px;
+      font-size: 1.1rem;
       line-height: 1.7;
-      margin-bottom: 15px;
-    }
-
-    .subtext {
-      font-size: 1rem;
-      opacity: 0.8;
     }
 
     .rose {
@@ -61,43 +50,37 @@
       margin: 20px 0;
     }
 
-    .cards {
+    /* Options */
+    .options {
       display: flex;
       flex-direction: column;
       gap: 15px;
-      margin-top: 20px;
-    }
-
-    .card {
-      background: white;
-      padding: 15px 25px;
-      border-radius: 12px;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-      font-size: 1rem;
-    }
-
-    button {
       margin-top: 30px;
-      padding: 12px 30px;
-      border: none;
+      width: 100%;
+      max-width: 350px;
+    }
+
+    .option-btn {
+      padding: 14px;
       border-radius: 30px;
-      background-color: #c9184a;
-      color: white;
+      border: none;
       font-size: 1rem;
       cursor: pointer;
-      transition: all 0.3s ease;
+      background: #c9184a;
+      color: white;
+      transition: 0.3s;
     }
 
-    button:hover {
-      background-color: #a4133c;
+    .option-btn:hover {
+      background: #a4133c;
       transform: scale(1.05);
     }
 
-    .hidden-message {
+    .result {
       display: none;
-      margin-top: 30px;
+      margin-top: 25px;
+      font-size: 1.2rem;
       font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
       color: #c9184a;
     }
 
@@ -107,13 +90,12 @@
       opacity: 0.7;
     }
 
-    /* Rose petals animation */
+    /* Petals */
     .petal {
       position: fixed;
       top: -10px;
       font-size: 20px;
       animation: fall linear infinite;
-      opacity: 0.8;
     }
 
     @keyframes fall {
@@ -125,75 +107,26 @@
 </head>
 <body>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section>
     <h1>Shrishti</h1>
-    <p class="subtext">My favorite person in the world.</p>
-    <p class="subtext">Happy Rose Day 🌹</p>
+    <p>My favorite person in the world.</p>
+    <p>Happy Rose Day 🌹</p>
   </section>
 
-  <!-- Rose Section -->
+  <!-- Rose -->
   <section>
     <div class="rose">🌹</div>
     <p>
-      On Rose Day, I give you more than a flower.<br/>
-      I give you my heart, again and again.
+      On Rose Day, I give you more than a flower.<br>
+      I give you my heart.
     </p>
   </section>
 
-  <!-- Why She’s Special -->
+  <!-- Options Section -->
   <section>
-    <h2>Why You’re Special</h2>
-    <div class="cards">
-      <div class="card">You make ordinary days feel magical.</div>
-      <div class="card">You understand me without words.</div>
-      <div class="card">Your kindness makes the world softer.</div>
-      <div class="card">Loving you feels easy and right.</div>
-    </div>
-  </section>
+    <h2>Choose Your Rose</h2>
+    <p>Each one is meant only for you 💖</p>
 
-  <!-- Quiet Love Section -->
-  <section>
-    <p>
-      Some people come into your life and change everything.<br/>
-      You did that to mine.
-    </p>
-
-    <button onclick="showMessage()">Always You</button>
-
-    <div class="hidden-message" id="message">
-      If I had a thousand roses, every one would still be yours.<br/>
-      Today, tomorrow, always. 🌹
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    Made with love, just for you.<br/>
-    Rose Day 2026 🌹
-  </footer>
-
-  <script>
-    function showMessage() {
-      document.getElementById("message").style.display = "block";
-      createPetals();
-    }
-
-    function createPetals() {
-      for (let i = 0; i < 25; i++) {
-        let petal = document.createElement("div");
-        petal.classList.add("petal");
-        petal.innerText = "🌸";
-        petal.style.left = Math.random() * 100 + "vw";
-        petal.style.animationDuration = 3 + Math.random() * 5 + "s";
-        document.body.appendChild(petal);
-
-        setTimeout(() => {
-          petal.remove();
-        }, 8000);
-      }
-    }
-  </script>
-
-</body>
-</html>
+    <div class="options">
+      <button class="option-btn" onclick="showResult(1)"
